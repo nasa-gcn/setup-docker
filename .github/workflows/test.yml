@@ -9,17 +9,17 @@ jobs:
     strategy:
       matrix:
         os:
-          - ubuntu-20.04
           - ubuntu-22.04
           - ubuntu-24.04
           - ubuntu-22.04-arm
           - ubuntu-24.04-arm
-          # - windows-2019  # doesn't work
-          - windows-2022
+          # - windows-2022  # doesn't work
           - windows-2025
-          - macos-13
+          - macos-15-intel
+          - macos-26-intel
           # - macos-14  # doesn't work, see https://github.com/marketplace/actions/setup-docker-on-macos#arm64-processors-m1-m2-m3-series-used-on-macos-14-images-are-unsupported
           # - macos-15  # doesn't work, see https://github.com/marketplace/actions/setup-docker-on-macos#arm64-processors-m1-m2-m3-series-used-on-macos-14-images-are-unsupported
+          # - macos-26  # doesn't work, see https://github.com/marketplace/actions/setup-docker-on-macos#arm64-processors-m1-m2-m3-series-used-on-macos-14-images-are-unsupported
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout
