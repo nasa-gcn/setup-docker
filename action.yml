@@ -20,7 +20,7 @@ runs:
         sudo installer -pkg podman-installer-macos-amd64.pkg -target /
         brew update
         brew install --build-from-source docker
-        sudo podman-mac-helper install
+        sudo /usr/local/bin/podman-mac-helper install
         podman machine init
         podman machine start
     - name: Install Podman
