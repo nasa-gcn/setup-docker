@@ -7,6 +7,7 @@ runs:
       if: runner.os == 'Windows'
       shell: bash
       run: |
+        wsl --update --web-download
         net stop docker || true
         choco install podman-cli
         podman machine init
