@@ -16,7 +16,10 @@ runs:
       if: runner.os == 'macOS' && runner.arch == 'X64'
       shell: bash
       run: |
-        brew install --build-from-source docker podman
+        brew update
+        brew install --build-from-source docker
+        brew extract --version=5.8.3 podman homebrew/cask-versions
+        brew install podman@5.8.3
         sudo podman-mac-helper install
         podman machine init
         podman machine start
