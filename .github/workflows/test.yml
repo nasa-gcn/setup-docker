@@ -16,6 +16,8 @@ jobs:
           - ubuntu-24.04-arm
           - windows-2022
           - windows-2025
+          # - windows-11-arm          # doesn't work, missing WSL2
+          # - windows-11-vs2026-arm   # doesn't work, missing WSL2
           - macos-15-intel
           - macos-26-intel
           # - macos-14  # doesn't work, see https://github.com/marketplace/actions/setup-docker-on-macos#arm64-processors-m1-m2-m3-series-used-on-macos-14-images-are-unsupported
