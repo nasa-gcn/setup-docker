@@ -16,10 +16,10 @@ runs:
       if: runner.os == 'macOS' && runner.arch == 'X64'
       shell: bash
       run: |
+        curl -OL https://github.com/podman-container-tools/podman/releases/download/v5.8.8/podman-installer-macos-amd64.pkg
+        sudo installer -pkg podman-installer-macos-amd64.pkg -target /
         brew update
         brew install --build-from-source docker
-        brew extract --version=5.8.3 podman homebrew/cask-versions
-        brew install podman@5.8.3
         sudo podman-mac-helper install
         podman machine init
         podman machine start
